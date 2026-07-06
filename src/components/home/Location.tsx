@@ -2,11 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
-import { NAP, OPENING_HOURS } from "@/lib/site-config";
+import { OpeningHours } from "@/components/ui/OpeningHours";
+import { GEO, NAP } from "@/lib/site-config";
 
-const mapsQuery = encodeURIComponent(
-  `${NAP.streetAddress}, ${NAP.addressLocality}, Hungary`
-);
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${GEO.latitude},${GEO.longitude}`;
 
 export function Location() {
   return (
@@ -22,13 +21,11 @@ export function Location() {
           <p className="text-lg">
             {NAP.streetAddress}, {NAP.addressLocality}
           </p>
-          <p className="text-ink/60">
-            {OPENING_HOURS[0].opens} – {OPENING_HOURS[0].closes}, every day
-          </p>
+          <OpeningHours className="space-y-1 text-ink/60" />
           <motion.a
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.98 }}
-            href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
+            href={directionsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-full bg-ink px-6 py-3 font-semibold text-cream"

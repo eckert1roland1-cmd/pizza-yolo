@@ -1,34 +1,35 @@
-export const SITE_URL = "https://pizzayolo.hu";
+export const SITE_URL = "https://pizzayolo.eu";
 
 export const SITE_NAME = "Pizza Yolo";
 
-// TODO: replace placeholders with the real street address, phone number,
-// opening hours and social handles before launch.
 export const NAP = {
   name: SITE_NAME,
   legalName: "Pizza Yolo",
-  streetAddress: "Club Aliga",
-  addressLocality: "Balatonaliga",
-  addressRegion: "Fejér",
+  streetAddress: "Aligai út",
+  addressLocality: "Balatonvilágos",
+  addressRegion: "Somogy",
+  postalCode: "8171",
   addressCountry: "HU",
-  telephone: "+36-00-000-0000",
+  telephone: "+36 70 414 8910",
   priceRange: "$$",
 };
 
-// TODO: replace with the real contact address used for privacy/GDPR requests.
-export const CONTACT_EMAIL = "hello@pizzayolo.hu";
+export const CONTACT_EMAIL = "info@pizzayolo.eu";
 
-// Approximate Balatonaliga coordinates — replace with Club Aliga's exact pin before launch.
+// Exact pin from the Pizza Yolo Google Business Profile listing.
 export const GEO = {
-  latitude: 46.874,
-  longitude: 18.083,
+  latitude: 46.9854332,
+  longitude: 18.1656624,
 };
 
+// Closed Monday–Thursday. Matches the hours listed on Google Business Profile.
 export const OPENING_HOURS = [
-  { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "11:00", closes: "22:00" },
+  { dayOfWeek: ["Friday"], opens: "12:30", closes: "21:00" },
+  { dayOfWeek: ["Saturday"], opens: "11:00", closes: "23:00" },
+  { dayOfWeek: ["Sunday"], opens: "11:00", closes: "22:00" },
 ];
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/pizzayolo",
-  tiktok: "https://tiktok.com/@pizzayolo",
+  instagram: "https://instagram.com/realpizzayolo",
+  tiktok: "https://tiktok.com/@realpizzayolo",
 };

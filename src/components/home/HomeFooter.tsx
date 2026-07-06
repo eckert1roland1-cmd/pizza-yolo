@@ -1,6 +1,7 @@
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { LegalLinks } from "@/components/legal/LegalLinks";
-import { NAP, OPENING_HOURS, SOCIAL_LINKS } from "@/lib/site-config";
+import { OpeningHours } from "@/components/ui/OpeningHours";
+import { NAP, SOCIAL_LINKS } from "@/lib/site-config";
 
 const NAV_LINKS = [
   { href: "#menu", label: "Menu" },
@@ -24,9 +25,7 @@ export function HomeFooter() {
         <p>
           {NAP.streetAddress}, {NAP.addressLocality}
         </p>
-        <p>
-          {OPENING_HOURS[0].opens} – {OPENING_HOURS[0].closes}, every day
-        </p>
+        <OpeningHours className="space-y-1" />
       </div>
       <div className="flex gap-6">
         <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:opacity-70">

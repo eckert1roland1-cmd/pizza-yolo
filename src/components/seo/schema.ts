@@ -27,6 +27,7 @@ export function localBusinessSchema() {
       streetAddress: NAP.streetAddress,
       addressLocality: NAP.addressLocality,
       addressRegion: NAP.addressRegion,
+      postalCode: NAP.postalCode,
       addressCountry: NAP.addressCountry,
     },
     geo: {
