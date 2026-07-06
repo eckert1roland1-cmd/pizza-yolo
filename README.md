@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Design First Principle
+
+Whenever there is a choice between adding more content or improving the presentation of existing content, always choose better presentation.
+
+Pizza Yolo intentionally has a small menu.
+
+The website should embrace this simplicity.
+
+Instead of overwhelming users with information, focus on creating an emotional connection through typography, photography, spacing, animation and storytelling.
+
+The website should feel curated rather than crowded.
+
 ## Getting Started
 
 First, run the development server:
