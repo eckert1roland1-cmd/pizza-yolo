@@ -1,4 +1,5 @@
 import { BrandLogo } from "@/components/ui/BrandLogo";
+import { LegalLinks } from "@/components/legal/LegalLinks";
 import { NAP, OPENING_HOURS, SOCIAL_LINKS } from "@/lib/site-config";
 
 const NAV_LINKS = [
@@ -35,6 +36,7 @@ export function HomeFooter() {
           TikTok
         </a>
       </div>
+      <LegalLinks />
       <p>&copy; {new Date().getFullYear()} Pizza Yolo</p>
     </footer>
   );

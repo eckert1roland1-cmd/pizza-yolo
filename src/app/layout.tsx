@@ -5,6 +5,12 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { localBusinessSchema, organizationSchema, websiteSchema } from "@/components/seo/schema";
 import { SITE_NAME, SITE_URL } from "@/lib/site-config";
 import { MotionProvider } from "@/components/motion/MotionProvider";
+import {
+  ConsentDefaults,
+  GoogleTagManager,
+  GoogleTagManagerNoScript,
+} from "@/components/analytics/GoogleTagManager";
+import { ConsentBanner } from "@/components/analytics/ConsentBanner";
 
 const jersey10 = Jersey_10({
   variable: "--font-jersey",
@@ -53,10 +59,14 @@ export default function RootLayout({
       className={`${jersey10.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <ConsentDefaults />
+        <GoogleTagManager />
+        <GoogleTagManagerNoScript />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={localBusinessSchema()} />
         <JsonLd data={websiteSchema()} />
         <MotionProvider>{children}</MotionProvider>
+        <ConsentBanner />
       </body>
     </html>
   );

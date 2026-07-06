@@ -15,6 +15,9 @@ export const NAP = {
   priceRange: "$$",
 };
 
+// TODO: replace with the real contact address used for privacy/GDPR requests.
+export const CONTACT_EMAIL = "hello@pizzayolo.hu";
+
 // Approximate Balatonaliga coordinates — replace with Club Aliga's exact pin before launch.
 export const GEO = {
   latitude: 46.874,
