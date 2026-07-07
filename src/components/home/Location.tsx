@@ -6,6 +6,7 @@ import { OpeningHours } from "@/components/ui/OpeningHours";
 import { GEO, NAP } from "@/lib/site-config";
 
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${GEO.latitude},${GEO.longitude}`;
+const telHref = `tel:${NAP.telephone.replace(/\s+/g, "")}`;
 
 export function Location() {
   return (
@@ -22,16 +23,26 @@ export function Location() {
             {NAP.streetAddress}, {NAP.addressLocality}
           </p>
           <OpeningHours className="space-y-1 text-ink/60" />
-          <motion.a
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.98 }}
-            href={directionsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-full bg-ink px-6 py-3 font-semibold text-cream"
-          >
-            Get Directions
-          </motion.a>
+          <div className="flex flex-wrap gap-4">
+            <motion.a
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.98 }}
+              href={directionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-full bg-ink px-6 py-3 font-semibold text-cream"
+            >
+              Get Directions
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.98 }}
+              href={telHref}
+              className="inline-block rounded-full border border-ink/20 px-6 py-3 font-semibold text-ink"
+            >
+              Call Us
+            </motion.a>
+          </div>
         </Reveal>
       </div>
     </section>
