@@ -7,7 +7,6 @@ const NAV_LINKS = [
   { href: "#menu", label: "Menu" },
   { href: "#gallery", label: "Gallery" },
   { href: "#location", label: "Location" },
-  { href: "#instagram", label: "Instagram" },
 ];
 
 export function HomeFooter() {

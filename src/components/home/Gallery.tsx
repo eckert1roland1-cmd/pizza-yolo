@@ -3,14 +3,22 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
+import { SOCIAL_LINKS } from "@/lib/site-config";
 
-const GALLERY_ITEMS = [
-  { label: "Pizza", image: "/images/gallery/pizza-trio-board.webp" },
-  { label: "Beach", image: null },
-  { label: "Friends", image: null },
-  { label: "Sunset", image: null },
-  { label: "Boxes", image: "/images/gallery/bite-me.webp" },
-  { label: "Lifestyle", image: null },
+type GalleryItem =
+  | { type: "image"; label: string; src: string }
+  | { type: "video"; label: string; src: string; poster: string };
+
+const GALLERY_ITEMS: GalleryItem[] = [
+  { type: "image", label: "Pizza", src: "/images/gallery/pizza-trio-board.webp" },
+  { type: "image", label: "Beach", src: "/images/gallery/beach-crew.webp" },
+  { type: "image", label: "Friends", src: "/images/gallery/friends-sharing.webp" },
+  { type: "video", label: "Balaton", src: "/videos/lake-float.mp4", poster: "/images/gallery/lake-float-poster.webp" },
+  { type: "image", label: "Boxes", src: "/images/gallery/bite-me.webp" },
+  { type: "image", label: "The Truck", src: "/images/gallery/truck-staff.webp" },
+  { type: "image", label: "Fresh", src: "/images/gallery/pizza-closeup.webp" },
+  { type: "video", label: "Sauces", src: "/videos/dips.mp4", poster: "/images/gallery/dips-poster.webp" },
+  { type: "image", label: "Beach Boxes", src: "/images/gallery/beach-boxes.webp" },
 ];
 
 export function Gallery() {
@@ -25,23 +33,42 @@ export function Gallery() {
             <motion.div
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-ink/5 text-sm text-ink/70"
+              className="relative aspect-square overflow-hidden rounded-2xl bg-ink/5"
             >
-              {item.image ? (
+              {item.type === "image" ? (
                 <Image
-                  src={item.image}
+                  src={item.src}
                   alt={`Pizza Yolo — ${item.label}`}
                   fill
                   sizes="(min-width: 768px) 33vw, 50vw"
                   className="object-cover"
                 />
               ) : (
-                item.label
+                <video
+                  src={item.src}
+                  poster={item.poster}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-label={`Pizza Yolo — ${item.label}`}
+                  className="h-full w-full object-cover"
+                />
               )}
             </motion.div>
           </Reveal>
         ))}
       </div>
+      <motion.a
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.98 }}
+        href={SOCIAL_LINKS.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 inline-block rounded-full bg-ink px-6 py-3 font-semibold text-cream"
+      >
+        Follow Pizza Yolo
+      </motion.a>
     </section>
   );
 }
