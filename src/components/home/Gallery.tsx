@@ -25,7 +25,7 @@ export function Gallery() {
             <motion.div
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-ink/5 text-sm text-ink/30"
+              className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-ink/5 text-sm text-ink/70"
             >
               {item.image ? (
                 <Image

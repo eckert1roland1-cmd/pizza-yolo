@@ -12,7 +12,7 @@ const NAV_LINKS = [
 
 export function HomeFooter() {
   return (
-    <footer className="space-y-8 border-t border-ink/5 px-6 py-16 text-sm text-ink/60">
+    <footer className="space-y-8 border-t border-ink/5 px-6 py-16 text-sm text-ink/70">
       <BrandLogo className="text-ink" />
       <nav className="flex flex-wrap gap-6">
         {NAV_LINKS.map((link) => (

@@ -68,7 +68,7 @@ export default function FaqPage() {
           <header>
             <Reveal className="space-y-4">
               <h1 className="font-display text-5xl md:text-6xl">{TITLE}</h1>
-              <p className="text-lg text-ink/60">{DESCRIPTION}</p>
+              <p className="text-lg text-ink/70">{DESCRIPTION}</p>
             </Reveal>
           </header>
 

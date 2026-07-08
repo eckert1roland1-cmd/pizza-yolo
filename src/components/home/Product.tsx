@@ -47,8 +47,8 @@ export function Product() {
                 />
               </div>
               <h3 className="font-display text-2xl">{product.name}</h3>
-              <p className="text-ink/60">{product.description}</p>
-              {product.note ? <p className="text-sm text-ink/40">{product.note}</p> : null}
+              <p className="text-ink/70">{product.description}</p>
+              {product.note ? <p className="text-sm text-ink/70">{product.note}</p> : null}
             </motion.div>
           </Reveal>
         ))}

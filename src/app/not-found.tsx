@@ -17,7 +17,7 @@ export default function NotFound() {
         <h1 className="font-display mt-2 text-4xl md:text-5xl">
           Slice Not Found
         </h1>
-        <p className="mt-4 max-w-md text-ink/60">
+        <p className="mt-4 max-w-md text-ink/70">
           This page wandered off the beach. Let&apos;s get you back to the
           pizza.
         </p>

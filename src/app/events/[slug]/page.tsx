@@ -55,7 +55,7 @@ export default async function EventPage({ params }: Props) {
         <article className="mx-auto max-w-2xl space-y-6">
           <Reveal className="space-y-6">
             <h1 className="font-display text-5xl md:text-6xl">{event.title}</h1>
-            <p className="text-lg text-ink/60">{event.summary}</p>
+            <p className="text-lg text-ink/70">{event.summary}</p>
             <p className="text-ink/70">{event.description}</p>
           </Reveal>
         </article>

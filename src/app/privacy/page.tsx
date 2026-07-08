@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         <article className="mx-auto max-w-2xl space-y-10">
           <header className="space-y-2">
             <h1 className="font-display text-4xl md:text-5xl">Privacy Policy</h1>
-            <p className="text-ink/50 text-sm">Last updated: {new Date().toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</p>
+            <p className="text-ink/70 text-sm">Last updated: {new Date().toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</p>
           </header>
 
           <section className="space-y-3">

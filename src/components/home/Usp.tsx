@@ -27,7 +27,7 @@ export function Usp() {
         <div key={usp.title} className={index === 1 ? "md:-translate-y-6" : undefined}>
           <Reveal delay={index * 0.1} className="space-y-2">
             <h2 className="font-display text-2xl">{usp.title}</h2>
-            <p className="text-ink/60">{usp.description}</p>
+            <p className="text-ink/70">{usp.description}</p>
           </Reveal>
         </div>
       ))}

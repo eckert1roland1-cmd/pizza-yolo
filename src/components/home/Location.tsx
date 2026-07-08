@@ -31,7 +31,7 @@ export function Location() {
           <p className="text-lg">
             {NAP.streetAddress}, {NAP.addressLocality}
           </p>
-          <OpeningHours className="space-y-1 text-ink/60" />
+          <OpeningHours className="space-y-1 text-ink/70" />
           <div className="flex flex-wrap gap-4">
             <MagneticButton
               href={directionsUrl}
