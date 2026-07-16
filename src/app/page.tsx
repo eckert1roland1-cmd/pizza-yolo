@@ -6,6 +6,7 @@ import { Product } from "@/components/home/Product";
 import { Gallery } from "@/components/home/Gallery";
 import { Experience } from "@/components/home/Experience";
 import { Location } from "@/components/home/Location";
+import { Newsletter } from "@/components/home/Newsletter";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { menuSchema } from "@/components/seo/schema";
@@ -36,6 +37,7 @@ export default function Home() {
         <Gallery />
         <Experience />
         <Location />
+        <Newsletter />
       </main>
       <HomeFooter />
     </>

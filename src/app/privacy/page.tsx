@@ -81,6 +81,23 @@ export default function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
+            <h2 className="text-xl font-semibold">Newsletter &amp; coupon signups</h2>
+            <p className="text-ink/70">
+              If you enter your email address to get a 10% off code, we store
+              your email with our email provider, Brevo, and use it to send
+              you the discount code and occasional emails about events and
+              updates. We only do this if you tick the consent checkbox next
+              to the signup form — it is never pre-checked. You can
+              unsubscribe at any time by replying to any email you receive
+              from us or by contacting us at{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+                {CONTACT_EMAIL}
+              </a>
+              .
+            </p>
+          </section>
+
+          <section className="space-y-3">
             <h2 className="text-xl font-semibold">Your rights</h2>
             <p className="text-ink/70">
               Under GDPR, you have the right to access, correct, or delete
