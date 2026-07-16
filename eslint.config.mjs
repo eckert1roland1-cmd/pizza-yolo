@@ -6,14 +6,16 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
-    // The homepage must never link to a "ghost" SEO page — those are only
-    // discoverable via sitemap.xml, never from the landing page itself.
+    // The homepage must never import a "ghost" SEO page's component — those
+    // stay discoverable only via sitemap.xml, never linked from the landing
+    // page. FAQ was deliberately promoted to a real linked nav item and is
+    // no longer in this list; detroit-style-pizza and events remain ghosts.
     files: ["src/components/home/**", "src/app/page.tsx"],
     rules: {
       "no-restricted-imports": [
         "error",
         {
-          patterns: ["**/detroit-style-pizza/**", "**/faq/**", "**/events/**"],
+          patterns: ["**/detroit-style-pizza/**", "**/events/**"],
         },
       ],
     },

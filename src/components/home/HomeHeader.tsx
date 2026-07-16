@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: "#menu", label: "Menu" },
   { href: "#gallery", label: "Gallery" },
   { href: "#location", label: "Location" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export function HomeHeader() {
