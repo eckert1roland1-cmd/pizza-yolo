@@ -41,6 +41,11 @@ export function localBusinessSchema() {
       opens: hours.opens,
       closes: hours.closes,
     })),
+    areaServed: [
+      { "@type": "City", name: "Balatonvilágos" },
+      { "@type": "City", name: "Siófok" },
+      { "@type": "City", name: "Balatonaliga" },
+    ],
     sameAs: Object.values(SOCIAL_LINKS),
   };
 }

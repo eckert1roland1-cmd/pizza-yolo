@@ -22,6 +22,11 @@ const FAQ_ITEMS = [
     answer: "At Club Aliga, Balatonaliga, right on the shore of Lake Balaton.",
   },
   {
+    question: "How far is Pizza Yolo from Siófok?",
+    answer:
+      "About 15 km — roughly a 15–20 minute drive along the south shore of Lake Balaton from Siófok to Club Aliga, Balatonvilágos.",
+  },
+  {
     question: "Can I order takeaway?",
     answer: "Yes — grab a slice and take it straight to the beach.",
   },
