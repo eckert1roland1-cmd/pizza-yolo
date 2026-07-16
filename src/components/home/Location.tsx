@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
 import { OpeningHours } from "@/components/ui/OpeningHours";
@@ -25,7 +26,15 @@ export function Location() {
       </Reveal>
       <div className="grid gap-8 md:grid-cols-2">
         <Reveal>
-          <div className="aspect-video rounded-2xl bg-ink/5" aria-hidden />
+          <div className="relative aspect-video overflow-hidden rounded-2xl bg-ink/5">
+            <Image
+              src="/images/gallery/truck-exterior.webp"
+              alt="The Pizza Yolo truck at Club Aliga, Balatonvilágos"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </Reveal>
         <Reveal delay={0.1} className="space-y-4">
           <p className="text-lg">
