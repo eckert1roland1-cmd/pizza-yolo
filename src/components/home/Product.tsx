@@ -34,29 +34,33 @@ export function Product() {
       </Reveal>
       <div className="grid gap-8 md:grid-cols-3">
         {PRODUCTS.map((product, index) => (
-          <Reveal key={product.name} delay={index * 0.1}>
-            <motion.div
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="space-y-2 rounded-2xl border border-ink/10 p-6"
-            >
-              <div className="relative aspect-square overflow-hidden rounded-xl bg-ink/5">
-                <Image
-                  src={product.image}
-                  alt={`${product.name} Detroit Style Pizza slice`}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex items-baseline justify-between gap-2">
-                <h3 className="font-display text-2xl">{product.name}</h3>
-                <span className="text-ink/70">{product.price}</span>
-              </div>
-              <p className="text-ink/70">{product.description}</p>
-              {product.note ? <p className="text-sm text-ink/70">{product.note}</p> : null}
-            </motion.div>
-          </Reveal>
+          <div key={product.name} className={index === 1 ? "md:-translate-y-6" : undefined}>
+            <Reveal delay={index * 0.1}>
+              <motion.div
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="space-y-3 rounded-2xl bg-white p-6 shadow-md shadow-ink/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10"
+              >
+                <div className="relative aspect-square overflow-hidden rounded-xl bg-ink/5">
+                  <Image
+                    src={product.image}
+                    alt={`${product.name} Detroit Style Pizza slice`}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="font-display text-2xl">{product.name}</h3>
+                  <span className="shrink-0 rounded-full bg-brand px-3 py-1 text-sm font-semibold text-cream">
+                    {product.price}
+                  </span>
+                </div>
+                <p className="text-ink/70">{product.description}</p>
+                {product.note ? <p className="text-sm text-ink/70">{product.note}</p> : null}
+              </motion.div>
+            </Reveal>
+          </div>
         ))}
       </div>
     </section>

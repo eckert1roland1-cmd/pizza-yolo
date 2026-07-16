@@ -2,22 +2,22 @@ import Link from "next/link";
 
 export function BrandLogo({ className }: { className?: string }) {
   return (
-    <Link href="/" className={`inline-flex items-center gap-2 ${className ?? ""}`}>
+    <Link href="/" className={`inline-block ${className ?? ""}`}>
       <span
         aria-hidden
-        className="inline-block h-7 w-7 shrink-0 bg-current"
+        className="block h-8 aspect-[4577/1496] bg-current"
         style={{
-          WebkitMaskImage: "url(/brand/icon-source.png)",
-          maskImage: "url(/brand/icon-source.png)",
+          WebkitMaskImage: "url(/brand/wordmark-source.png)",
+          maskImage: "url(/brand/wordmark-source.png)",
           WebkitMaskSize: "contain",
           maskSize: "contain",
           WebkitMaskRepeat: "no-repeat",
           maskRepeat: "no-repeat",
-          WebkitMaskPosition: "center",
-          maskPosition: "center",
+          WebkitMaskPosition: "center left",
+          maskPosition: "center left",
         }}
       />
-      <span className="font-display text-3xl tracking-tight">Pizza Yolo</span>
+      <span className="sr-only">Pizza Yolo</span>
     </Link>
   );
 }
