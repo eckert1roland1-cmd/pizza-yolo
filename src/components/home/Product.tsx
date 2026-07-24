@@ -40,7 +40,7 @@ export function Product() {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="flex h-full flex-col space-y-3 rounded-2xl bg-white p-6 shadow-md shadow-ink/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10"
             >
-              <div className="relative aspect-square overflow-hidden rounded-xl bg-ink/5">
+              <div className="relative aspect-[5/4] overflow-hidden rounded-xl bg-ink/5">
                 <Image
                   src={product.image}
                   alt={`${product.name} Detroit Style Pizza slice`}
