@@ -6,6 +6,7 @@ import { Style } from "@/components/home/Style";
 import { Product } from "@/components/home/Product";
 import { Gallery } from "@/components/home/Gallery";
 import { Experience } from "@/components/home/Experience";
+import { Reviews } from "@/components/home/Reviews";
 import { Location } from "@/components/home/Location";
 import { Newsletter } from "@/components/home/Newsletter";
 import { HomeFooter } from "@/components/home/HomeFooter";
@@ -38,6 +39,7 @@ export default function Home() {
         <Product />
         <Gallery />
         <Experience />
+        <Reviews />
         <Location />
         <Newsletter />
       </main>

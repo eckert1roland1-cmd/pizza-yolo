@@ -1,4 +1,5 @@
 import { GEO, NAP, OPENING_HOURS, SITE_NAME, SITE_URL, SOCIAL_LINKS } from "@/lib/site-config";
+import { FEATURED_REVIEWS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/reviews";
 import type { PizzaYoloEvent } from "@/lib/events";
 
 export function organizationSchema() {
@@ -46,6 +47,17 @@ export function localBusinessSchema() {
       { "@type": "City", name: "Siófok" },
       { "@type": "City", name: "Balatonaliga" },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: GOOGLE_RATING,
+      reviewCount: GOOGLE_REVIEW_COUNT,
+    },
+    review: FEATURED_REVIEWS.map((item) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: item.name },
+      reviewBody: item.quote,
+      reviewRating: { "@type": "Rating", ratingValue: 5 },
+    })),
     sameAs: Object.values(SOCIAL_LINKS),
   };
 }
