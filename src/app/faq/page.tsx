@@ -9,7 +9,7 @@ import { SITE_URL } from "@/lib/site-config";
 
 const TITLE = "FAQ";
 const DESCRIPTION =
-  "Parking, takeaway, dogs and vegetarian options — everything you need to know before visiting Pizza Yolo at Club Aliga, Balatonaliga.";
+  "Parking, takeaway, dogs and vegetarian options — everything you need to know before visiting Pizza Yolo at Club Aliga, Balatonvilágos.";
 
 const FAQ_ITEMS = [
   {
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Where is Pizza Yolo?",
-    answer: "At Club Aliga, Balatonaliga, right on the shore of Lake Balaton.",
+    answer: "At Club Aliga, Balatonvilágos, right on the shore of Lake Balaton.",
   },
   {
     question: "How far is Pizza Yolo from Siófok?",

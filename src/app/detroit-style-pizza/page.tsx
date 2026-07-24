@@ -9,7 +9,7 @@ import { SITE_URL } from "@/lib/site-config";
 
 const TITLE = "What is Detroit Style Pizza?";
 const DESCRIPTION =
-  "Square, crispy-edged and packed with cheese to the corners — here's what makes Detroit Style Pizza different, and why Pizza Yolo serves it right on the beach at Club Aliga, Balatonaliga.";
+  "Square, crispy-edged and packed with cheese to the corners — here's what makes Detroit Style Pizza different, and why Pizza Yolo serves it right on the beach at Club Aliga, Balatonvilágos.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -134,7 +134,7 @@ export default function DetroitStylePizzaPage() {
               <h2 className="font-display text-3xl">Detroit Style, by the beach</h2>
               <p className="text-ink/70">
                 At Pizza Yolo, we bake fresh Detroit Style Pizza every day at
-                Club Aliga, Balatonaliga — right on Lake Balaton. Same square
+                Club Aliga, Balatonvilágos — right on Lake Balaton. Same square
                 shape, same crispy cheese edge, served a few steps from the
                 water.
               </p>

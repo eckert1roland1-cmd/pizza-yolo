@@ -46,7 +46,7 @@ export function Hero() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
           className="max-w-md text-lg text-cream"
         >
-          Fresh Detroit Style Pizza served daily at Club Aliga, Balatonaliga.
+          Fresh Detroit Style Pizza served daily at Club Aliga, Balatonvilágos.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 16 }}

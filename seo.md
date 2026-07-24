@@ -116,13 +116,13 @@ Detroit Style Pizza Balaton
 
 Detroit Pizza Balaton
 
-Detroit Pizza Balatonaliga
+Detroit Pizza Balatonvilágos
 
 Detroit Pizza Club Aliga
 
 Pizza Balaton
 
-Pizza Balatonaliga
+Pizza Balatonvilágos
 
 Beach Pizza Balaton
 
@@ -186,7 +186,7 @@ The website should consistently reference:
 
 Club Aliga
 
-Balatonaliga
+Balatonvilágos
 
 Lake Balaton
 
@@ -196,7 +196,7 @@ Without overusing them.
 
 Example:
 
-Fresh Detroit Style Pizza served daily at Club Aliga, Balatonaliga.
+Fresh Detroit Style Pizza served daily at Club Aliga, Balatonvilágos.
 
 Natural.
 

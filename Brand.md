@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Pizza Yolo is a Detroit Style Pizza concept located at Club Aliga, Balatonaliga.
+Pizza Yolo is a Detroit Style Pizza concept located at Club Aliga, Balatonvilágos.
 
 The brand is built around one simple idea:
 

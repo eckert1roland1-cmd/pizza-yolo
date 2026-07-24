@@ -198,7 +198,7 @@ By the Beach.
 
 Supporting Text
 
-Fresh Detroit Style Pizza served daily at Club Aliga, Balatonaliga.
+Fresh Detroit Style Pizza served daily at Club Aliga, Balatonvilágos.
 
 Primary CTA
 

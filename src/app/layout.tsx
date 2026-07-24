@@ -28,10 +28,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: `%s | ${SITE_NAME}`,
-    default: `${SITE_NAME} — Detroit Style Pizza by the Beach | Balatonaliga`,
+    default: `${SITE_NAME} — Detroit Style Pizza by the Beach | Balatonvilágos`,
   },
   description:
-    "Detroit Style Pizza by the beach. Fresh square slices served daily at Club Aliga, Balatonaliga, Lake Balaton.",
+    "Detroit Style Pizza by the beach. Fresh square slices served daily at Club Aliga, Balatonvilágos, Lake Balaton.",
   openGraph: {
     siteName: SITE_NAME,
     locale: "en_US",

@@ -32,7 +32,7 @@ Question every decision.
 
 # About Pizza Yolo
 
-Pizza Yolo is an American-inspired Detroit Style Pizza concept located on the beach of Club Aliga, Balatonaliga, Hungary.
+Pizza Yolo is an American-inspired Detroit Style Pizza concept located on the beach of Club Aliga, Balatonvilágos, Hungary.
 
 The concept combines:
 
