@@ -14,9 +14,9 @@ const GALLERY_ITEMS: GalleryItem[] = [
   { type: "image", label: "Beach", src: "/images/gallery/beach-crew.webp" },
   { type: "image", label: "Friends", src: "/images/gallery/friends-sharing.webp" },
   { type: "video", label: "Balaton", src: "/videos/lake-float.mp4", poster: "/images/gallery/lake-float-poster.webp" },
-  { type: "image", label: "Boxes", src: "/images/gallery/bite-me.webp" },
+  { type: "image", label: "Drinks", src: "/images/gallery/drinks-filgo.webp" },
   { type: "image", label: "The Truck", src: "/images/gallery/truck-staff.webp" },
-  { type: "image", label: "Fresh", src: "/images/gallery/pizza-closeup.webp" },
+  { type: "image", label: "Fresh", src: "/images/gallery/pizza-fresh-oven.webp" },
   { type: "video", label: "Sauces", src: "/videos/dips.mp4", poster: "/images/gallery/dips-poster.webp" },
   { type: "image", label: "Beach Boxes", src: "/images/gallery/beach-boxes.webp" },
 ];
