@@ -5,7 +5,7 @@ import { MagneticButton } from "@/components/motion/MagneticButton";
 export function Style() {
   return (
     <section className="relative bg-ink text-cream">
-      <div className="relative aspect-[2600/691] w-full">
+      <div className="relative aspect-[4/3] w-full md:aspect-[2600/691]">
         <Image
           src="/images/style/three-pizzas-banner.webp"
           alt="Three Pizza Yolo Detroit Style Pizza boxes with dips, side by side — Ham & Corn, Trio and Pepperoni"
@@ -23,9 +23,9 @@ export function Style() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="font-display mt-2 text-4xl leading-[0.95] md:text-6xl">
-            Pizza Shouldn&apos;t Be Round.
+            Pizza Shouldn&apos;t Always Be Round.
             <br />
-            Ours Isn&apos;t.
+            We Are the Proof.
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
