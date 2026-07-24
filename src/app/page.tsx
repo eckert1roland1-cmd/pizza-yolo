@@ -36,10 +36,10 @@ export default function Home() {
         <Hero />
         <Usp />
         <Style />
-        <Product />
-        <Gallery />
-        <Experience />
         <Reviews />
+        <Product />
+        <Experience />
+        <Gallery />
         <Location />
         <Newsletter />
       </main>
