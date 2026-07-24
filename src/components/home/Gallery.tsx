@@ -6,19 +6,66 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SOCIAL_LINKS } from "@/lib/site-config";
 
 type GalleryItem =
-  | { type: "image"; label: string; src: string }
-  | { type: "video"; label: string; src: string; poster: string };
+  | { type: "image"; label: string; alt: string; src: string }
+  | { type: "video"; label: string; alt: string; src: string; poster: string };
 
 const GALLERY_ITEMS: GalleryItem[] = [
-  { type: "image", label: "Pizza", src: "/images/gallery/pizza-trio-board.webp" },
-  { type: "image", label: "Beach", src: "/images/gallery/beach-crew.webp" },
-  { type: "image", label: "Friends", src: "/images/gallery/friends-sharing.webp" },
-  { type: "video", label: "Balaton", src: "/videos/lake-float.mp4", poster: "/images/gallery/lake-float-poster.webp" },
-  { type: "image", label: "Drinks", src: "/images/gallery/drinks-filgo.webp" },
-  { type: "image", label: "The Truck", src: "/images/gallery/truck-staff.webp" },
-  { type: "image", label: "Fresh", src: "/images/gallery/pizza-fresh-oven.webp" },
-  { type: "video", label: "Sauces", src: "/videos/dips.mp4", poster: "/images/gallery/dips-poster.webp" },
-  { type: "image", label: "Beach Boxes", src: "/images/gallery/beach-boxes.webp" },
+  {
+    type: "image",
+    label: "Pizza",
+    alt: "Pizza Yolo's Trio, Pepperoni and Ham & Corn slices with dip cups, laid out on a beach blanket",
+    src: "/images/gallery/pizza-trio-board.webp",
+  },
+  {
+    type: "image",
+    label: "Beach",
+    alt: "A Pizza Yolo box and a cold Peroni beer on a boat blanket at Lake Balaton",
+    src: "/images/gallery/beach-crew.webp",
+  },
+  {
+    type: "image",
+    label: "Friends",
+    alt: "Two friends sharing Pizza Yolo slices at a picnic table by the truck",
+    src: "/images/gallery/friends-sharing.webp",
+  },
+  {
+    type: "video",
+    label: "Balaton",
+    alt: "Pizza Yolo boxes floating on the surface of Lake Balaton",
+    src: "/videos/lake-float.mp4",
+    poster: "/images/gallery/lake-float-poster.webp",
+  },
+  {
+    type: "image",
+    label: "Drinks",
+    alt: "Cold drinks from the FilGo dispenser at Pizza Yolo",
+    src: "/images/gallery/drinks-filgo.webp",
+  },
+  {
+    type: "image",
+    label: "The Truck",
+    alt: "A Pizza Yolo team member serving fresh slices from the truck window",
+    src: "/images/gallery/truck-staff.webp",
+  },
+  {
+    type: "image",
+    label: "Fresh",
+    alt: "Fresh parmesan being sprinkled over a hot Pepperoni pizza straight out of the oven",
+    src: "/images/gallery/pizza-fresh-oven.webp",
+  },
+  {
+    type: "video",
+    label: "Sauces",
+    alt: "Pizza Yolo dip cups — tomato, pesto and garlic aioli — around fresh slices",
+    src: "/videos/dips.mp4",
+    poster: "/images/gallery/dips-poster.webp",
+  },
+  {
+    type: "image",
+    label: "Beach Boxes",
+    alt: "Pizza Yolo boxes and dip cups laid out on a beach blanket",
+    src: "/images/gallery/beach-boxes.webp",
+  },
 ];
 
 export function Gallery() {
@@ -38,7 +85,7 @@ export function Gallery() {
               {item.type === "image" ? (
                 <Image
                   src={item.src}
-                  alt={`Pizza Yolo — ${item.label}`}
+                  alt={item.alt}
                   fill
                   sizes="(min-width: 768px) 33vw, 50vw"
                   className="object-cover"
@@ -51,7 +98,7 @@ export function Gallery() {
                   muted
                   loop
                   playsInline
-                  aria-label={`Pizza Yolo — ${item.label}`}
+                  aria-label={item.alt}
                   className="h-full w-full object-cover"
                 />
               )}

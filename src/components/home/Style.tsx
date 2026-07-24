@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 
@@ -36,12 +37,20 @@ export function Style() {
           </p>
         </Reveal>
         <Reveal delay={0.15}>
-          <MagneticButton
-            href="#menu"
-            className="mt-6 inline-block rounded-full bg-brand px-6 py-3 font-semibold text-cream"
-          >
-            Today&apos;s Menu
-          </MagneticButton>
+          <div className="mt-6 flex flex-wrap items-center gap-6">
+            <MagneticButton
+              href="#menu"
+              className="inline-block rounded-full bg-brand px-6 py-3 font-semibold text-cream"
+            >
+              Today&apos;s Menu
+            </MagneticButton>
+            <Link
+              href="/detroit-style-pizza"
+              className="text-sm font-semibold text-cream/70 underline underline-offset-4 hover:text-cream"
+            >
+              What Is Detroit Style?
+            </Link>
+          </div>
         </Reveal>
       </div>
     </section>

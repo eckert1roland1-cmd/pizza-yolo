@@ -1,9 +1,13 @@
+import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { ShapeAccent } from "@/components/ui/ShapeAccent";
+import { events } from "@/lib/events";
 
 const MOMENTS = ["Beach", "Music", "Community", "Events", "Sunsets", "Relax"];
 
 export function Experience() {
+  const nextEvent = events[0];
+
   return (
     <section className="relative overflow-hidden bg-ink px-6 py-24 text-cream">
       <ShapeAccent
@@ -16,9 +20,18 @@ export function Experience() {
       <div className="flex flex-wrap gap-4">
         {MOMENTS.map((moment, index) => (
           <Reveal key={moment} delay={index * 0.05}>
-            <span className="rounded-full border border-cream/20 px-5 py-2 text-sm">
-              {moment}
-            </span>
+            {moment === "Events" && nextEvent ? (
+              <Link
+                href={`/events/${nextEvent.slug}`}
+                className="rounded-full bg-brand px-5 py-2 text-sm font-semibold text-cream hover:opacity-90"
+              >
+                {nextEvent.title}
+              </Link>
+            ) : (
+              <span className="rounded-full border border-cream/20 px-5 py-2 text-sm">
+                {moment}
+              </span>
+            )}
           </Reveal>
         ))}
       </div>

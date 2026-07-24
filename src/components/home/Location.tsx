@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/motion/Reveal";
 import { OpeningHours } from "@/components/ui/OpeningHours";
@@ -9,6 +8,7 @@ import { MagneticButton } from "@/components/motion/MagneticButton";
 import { GEO, NAP } from "@/lib/site-config";
 
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${GEO.latitude},${GEO.longitude}`;
+const mapEmbedUrl = `https://maps.google.com/maps?q=${GEO.latitude},${GEO.longitude}&z=15&output=embed`;
 const telHref = `tel:${NAP.telephone.replace(/\s+/g, "")}`;
 
 export function Location() {
@@ -27,12 +27,12 @@ export function Location() {
       <div className="grid gap-8 md:grid-cols-2">
         <Reveal>
           <div className="relative aspect-video overflow-hidden rounded-2xl bg-ink/5">
-            <Image
-              src="/images/gallery/truck-exterior.webp"
-              alt="The Pizza Yolo truck at Club Aliga, Balatonvilágos"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+            <iframe
+              src={mapEmbedUrl}
+              title="Map to Pizza Yolo at Club Aliga, Balatonvilágos"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-full w-full border-0"
             />
           </div>
         </Reveal>
