@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { Hero } from "@/components/home/Hero";
 import { Usp } from "@/components/home/Usp";
+import { Style } from "@/components/home/Style";
 import { Product } from "@/components/home/Product";
 import { Gallery } from "@/components/home/Gallery";
 import { Experience } from "@/components/home/Experience";
@@ -33,6 +34,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Usp />
+        <Style />
         <Product />
         <Gallery />
         <Experience />
