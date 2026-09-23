@@ -121,10 +121,6 @@ export async function POST(request: Request) {
       {
         error: "A jelentkezést most nem tudjuk fogadni.",
         fallbackEmail: CONTACT_EMAIL,
-        // IDEIGLENES diagnosztika a beallitas befejezesehez. Eltavolitando,
-        // amint a kuldes mukodik.
-        providerStatus: notify.status,
-        providerDetail: detail.slice(0, 300),
       },
       { status: 502 }
     );
