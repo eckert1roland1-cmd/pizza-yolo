@@ -32,6 +32,7 @@ export function ApplyModal({
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const sheetRef = useRef<HTMLDivElement>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
 
   const [step, setStep] = useState<1 | 2>(1);
   const [status, setStatus] = useState<"idle" | "loading" | "error" | "done">("idle");
@@ -127,6 +128,9 @@ export function ApplyModal({
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Valami félrement. Próbáld újra.");
+      requestAnimationFrame(() =>
+        errorRef.current?.scrollIntoView({ block: "center", behavior: "smooth" })
+      );
     }
   }
 
@@ -381,9 +385,19 @@ export function ApplyModal({
                     </div>
 
                     {status === "error" ? (
-                      <p role="alert" className="text-sm font-medium text-brand">
-                        {errorMsg}
-                      </p>
+                      <div
+                        ref={errorRef}
+                        role="alert"
+                        className="flex gap-3 rounded-xl border-2 border-brand bg-brand/5 p-4"
+                      >
+                        <span
+                          aria-hidden
+                          className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-sm font-bold text-cream"
+                        >
+                          !
+                        </span>
+                        <p className="text-sm font-medium text-ink">{errorMsg}</p>
+                      </div>
                     ) : null}
 
                     <div className="flex gap-3">
