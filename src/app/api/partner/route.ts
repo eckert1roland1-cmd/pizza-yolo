@@ -115,8 +115,16 @@ export async function POST(request: Request) {
   });
 
   if (!notify.ok) {
+    // A Brevo hibakodja a Vercel runtime logjaban olvashato: 401 = rossz kulcs,
+    // 400 = hibas keres (pl. nem igazolt felado).
     console.error("Brevo partner email failed:", notify.status, await notify.text());
-    return NextResponse.json({ error: "Valami félrement. Próbáld újra." }, { status: 502 });
+    return NextResponse.json(
+      {
+        error: "A jelentkezést most nem tudjuk fogadni.",
+        fallbackEmail: CONTACT_EMAIL,
+      },
+      { status: 502 }
+    );
   }
 
   // A visszaigazolás kimaradhat: a jelentkezés már megvan, ezen ne bukjon el.
