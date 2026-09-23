@@ -78,10 +78,15 @@ export async function POST(request: Request) {
     );
   }
 
-  // Hova menjen az értesítés. Alapból a publikus cím; a PARTNER_NOTIFY_EMAIL
-  // környezeti változóval bármi másra átirányítható — így egy magáncím nem
-  // kerül bele a nyilvános repóba.
-  const notifyTo = process.env.PARTNER_NOTIFY_EMAIL?.trim() || CONTACT_EMAIL;
+  // Hova menjen az értesítés. A PARTNER_NOTIFY_EMAIL vesszővel elválasztva
+  // több címet is elfogad; üresen a publikus címre megy. Így a címzettek
+  // listája beállítás kérdése, és magáncím nem kerül a nyilvános repóba.
+  const notifyTo = (process.env.PARTNER_NOTIFY_EMAIL ?? "")
+    .split(",")
+    .map((address) => address.trim())
+    .filter((address) => EMAIL_RE.test(address))
+    .slice(0, 5);
+  if (notifyTo.length === 0) notifyTo.push(CONTACT_EMAIL);
 
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) {
@@ -107,7 +112,7 @@ export async function POST(request: Request) {
 
   const notify = await send({
     sender: { name: SITE_NAME, email: CONTACT_EMAIL },
-    to: [{ email: notifyTo }],
+    to: notifyTo.map((email) => ({ email })),
     replyTo: { email: application.email, name: application.name },
     subject: `Partner jelentkezés — ${application.name} (${application.location}, ${MODE_LABELS[mode]})`,
     htmlContent: partnerApplicationHtml(application),
