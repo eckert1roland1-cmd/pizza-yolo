@@ -8,7 +8,6 @@ import { PartnerHeader } from "@/components/partner/PartnerHeader";
 import { PartnerHero } from "@/components/partner/PartnerHero";
 import { PartnerProduct } from "@/components/partner/PartnerProduct";
 import { PartnerSetup } from "@/components/partner/PartnerSetup";
-import { PartnerCalculator } from "@/components/partner/PartnerCalculator";
 import { PartnerRoutes } from "@/components/partner/PartnerRoutes";
 import { PartnerProof } from "@/components/partner/PartnerProof";
 import { PartnerMarketing } from "@/components/partner/PartnerMarketing";
@@ -65,7 +64,6 @@ export default function PartnerPage() {
         </div>
 
         <PartnerSetup />
-        <PartnerCalculator />
         <PartnerRoutes />
         <PartnerProof />
         <PartnerMarketing />

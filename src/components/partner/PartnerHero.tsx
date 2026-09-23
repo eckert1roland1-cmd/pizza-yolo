@@ -44,10 +44,10 @@ export function PartnerHero() {
                 Jelentkezem
               </ApplyButton>
               <a
-                href="#kalkulator"
+                href="#utak"
                 className="rounded-full border border-ink/15 px-7 py-3.5 font-semibold text-ink hover:border-ink/40"
               >
-                Mennyit hoz?
+                Hogyan működik?
               </a>
             </div>
           </Reveal>

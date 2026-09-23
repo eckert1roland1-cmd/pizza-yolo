@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { ApplyButton } from "@/components/partner/ApplyProvider";
-import { FRANCHISE, IN_STORE_TIERS, formatHuf } from "@/lib/partner";
 
 export function PartnerRoutes() {
   return (
@@ -19,8 +18,8 @@ export function PartnerRoutes() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 text-lg text-ink/70">
-              Ugyanaz a termék, ugyanaz a márka. A különbség a beszerzési árban van
-              — és abban, mennyire lesz a hely PizzaYolo.
+              Ugyanaz a termék, ugyanaz a márka. A különbség a beszerzési árban
+              van — és abban, mennyire lesz a hely PizzaYolo.
             </p>
           </Reveal>
         </div>
@@ -33,16 +32,14 @@ export function PartnerRoutes() {
                 Kedvezőbb
               </span>
               <h3 className="font-display text-4xl">Saját PizzaYolo</h3>
-              <p className="font-display mt-4 text-5xl tabular-nums">
-                {formatHuf(FRANCHISE.slicePrice)} Ft
-                <span className="ml-2 text-lg font-sans font-semibold text-cream/70">
-                  / szelet
-                </span>
+              <p className="font-display mt-4 text-3xl leading-tight text-cream/90">
+                Teljes márka,
+                <br />
+                saját egység.
               </p>
-              <p className="mt-2 text-cream/80">
-                Fix ár, a forgalomtól függetlenül. Mellette{" "}
-                {Math.round((FRANCHISE.royaltyRate + FRANCHISE.marketingRate) * 100)}%
-                royalty és marketing a nettó forgalomra.
+              <p className="mt-4 text-cream/80">
+                Fix beszerzési ár, a forgalomtól függetlenül. A két konstrukció
+                közül ez a kedvezőbb.
               </p>
               <ul className="mt-6 flex-1 space-y-2.5 text-cream/90">
                 <Item light>Teljes arculat, saját egység</Item>
@@ -63,41 +60,19 @@ export function PartnerRoutes() {
           <Reveal delay={0.05} className="h-full">
             <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-cream p-8">
               <h3 className="font-display text-4xl">Bolton belüli sarok</h3>
-              <p className="font-display mt-4 text-5xl tabular-nums">
-                {formatHuf(IN_STORE_TIERS[IN_STORE_TIERS.length - 1].slicePrice)} Ft
-                <span className="ml-2 font-sans text-lg font-semibold text-ink/50">
-                  / szelettől
-                </span>
+              <p className="font-display mt-4 text-3xl leading-tight text-ink/80">
+                A meglévő
+                <br />
+                helyed mellé.
               </p>
-              <p className="mt-2 text-ink/70">
-                Nincs royalty. A beszerzési ár a forgalommal csökken — minél több
-                fogy, annál olcsóbb.
+              <p className="mt-4 text-ink/70">
+                Minimális beruházás, gyors indulás. A beszerzési ár a forgalommal
+                csökken — minél több fogy, annál kedvezőbb.
               </p>
-
-              <dl className="mt-6 space-y-px overflow-hidden rounded-xl bg-ink/10">
-                {[...IN_STORE_TIERS]
-                  .slice()
-                  .reverse()
-                  .map((tier) => (
-                    <div
-                      key={tier.slicePrice}
-                      className="flex items-baseline justify-between gap-4 bg-cream px-4 py-3"
-                    >
-                      <dt className="text-sm text-ink/60">
-                        {tier.minSlicesPerDay === 0
-                          ? "Napi 60 szelet alatt"
-                          : `Napi ${tier.minSlicesPerDay} szelettől`}
-                      </dt>
-                      <dd className="font-display text-2xl tabular-nums">
-                        {formatHuf(tier.slicePrice)} Ft
-                      </dd>
-                    </div>
-                  ))}
-              </dl>
-
               <ul className="mt-6 flex-1 space-y-2.5 text-ink/80">
                 <Item>A meglévő vendégkörödre épít</Item>
                 <Item>Nincs külön bérleti díj</Item>
+                <Item>Nincs royalty</Item>
                 <Item>Bármikor átléphetsz saját egységbe</Item>
               </ul>
               <ApplyButton
@@ -109,6 +84,14 @@ export function PartnerRoutes() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={0.1}>
+          <p className="mt-8 max-w-2xl text-ink/60">
+            Az árazás minden partnernél egyedi — a helyszín, a várható forgalom
+            és a konstrukció dönti el. A jelentkezésed után személyre szabott
+            ajánlatot küldünk.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

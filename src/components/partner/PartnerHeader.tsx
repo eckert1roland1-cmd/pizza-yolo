@@ -4,7 +4,6 @@ import { ApplyButton } from "@/components/partner/ApplyProvider";
 const NAV_LINKS = [
   { href: "#termek", label: "Termék" },
   { href: "#beruhazas", label: "Beruházás" },
-  { href: "#kalkulator", label: "Kalkulátor" },
   { href: "#utak", label: "Két út" },
 ];
 
