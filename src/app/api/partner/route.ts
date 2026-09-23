@@ -78,11 +78,21 @@ export async function POST(request: Request) {
     );
   }
 
+  // Hova menjen az értesítés. Alapból a publikus cím; a PARTNER_NOTIFY_EMAIL
+  // környezeti változóval bármi másra átirányítható — így egy magáncím nem
+  // kerül bele a nyilvános repóba.
+  const notifyTo = process.env.PARTNER_NOTIFY_EMAIL?.trim() || CONTACT_EMAIL;
+
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) {
     console.error("Partner application failed: BREVO_API_KEY is not configured.");
     return NextResponse.json(
-      { error: `A jelentkezés most nem elérhető. E-mail: ${CONTACT_EMAIL}` },
+      {
+        error: "A jelentkezést most nem tudjuk fogadni.",
+        // A kliens ebből tudja, hogy felajánlja a közvetlen e-mailt,
+        // így a jelentkező nem vész el, amíg a küldés nem áll helyre.
+        fallbackEmail: CONTACT_EMAIL,
+      },
       { status: 503 }
     );
   }
@@ -97,7 +107,7 @@ export async function POST(request: Request) {
 
   const notify = await send({
     sender: { name: SITE_NAME, email: CONTACT_EMAIL },
-    to: [{ email: CONTACT_EMAIL }],
+    to: [{ email: notifyTo }],
     replyTo: { email: application.email, name: application.name },
     subject: `Partner jelentkezés — ${application.name} (${application.location}, ${MODE_LABELS[mode]})`,
     htmlContent: partnerApplicationHtml(application),

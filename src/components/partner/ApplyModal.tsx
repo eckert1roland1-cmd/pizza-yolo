@@ -8,6 +8,7 @@ import {
   VENUE_STATUS,
   VENUE_TYPES,
   VOLUME_BANDS,
+  labelFor,
   type Option,
   type PartnerMode,
 } from "@/lib/partner";
@@ -37,6 +38,7 @@ export function ApplyModal({
   const [step, setStep] = useState<1 | 2>(1);
   const [status, setStatus] = useState<"idle" | "loading" | "error" | "done">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [fallbackEmail, setFallbackEmail] = useState("");
   const [errors, setErrors] = useState<Errors>({});
 
   const [venueStatus, setVenueStatus] = useState("");
@@ -96,6 +98,26 @@ export function ApplyModal({
     sheetRef.current?.scrollTo({ top: 0 });
   }
 
+  function mailtoHref(to: string) {
+    const body = [
+      `Konstrukció: ${MODE_LABELS[mode]}`,
+      `Helyszín: ${location}`,
+      `Van-e helye: ${labelFor(VENUE_STATUS, venueStatus) ?? ""}`,
+      `A hely jellege: ${labelFor(VENUE_TYPES[mode], venueType) ?? ""}`,
+      `Várható napi forgalom: ${labelFor(VOLUME_BANDS, volume) ?? ""}`,
+      `Időzítés: ${labelFor(TIMELINES, timeline) ?? ""}`,
+      `Név: ${name}`,
+      company ? `Cég: ${company}` : "",
+      `Telefon: ${phone}`,
+      `E-mail: ${email}`,
+      message ? `Üzenet: ${message}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const subject = `Partner jelentkezés — ${name} (${location})`;
+    return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!validateStep2()) return;
@@ -123,7 +145,10 @@ export function ApplyModal({
         }),
       });
       const payload = await res.json();
-      if (!res.ok) throw new Error(payload.error || "Valami félrement. Próbáld újra.");
+      if (!res.ok) {
+        setFallbackEmail(typeof payload.fallbackEmail === "string" ? payload.fallbackEmail : "");
+        throw new Error(payload.error || "Valami félrement. Próbáld újra.");
+      }
       setStatus("done");
     } catch (err) {
       setStatus("error");
@@ -396,7 +421,23 @@ export function ApplyModal({
                         >
                           !
                         </span>
-                        <p className="text-sm font-medium text-ink">{errorMsg}</p>
+                        <div>
+                          <p className="text-sm font-medium text-ink">{errorMsg}</p>
+                          {fallbackEmail ? (
+                            <>
+                              <p className="mt-1 text-sm text-ink/70">
+                                Küldd el egy kattintással levélben — mindent
+                                előre kitöltünk.
+                              </p>
+                              <a
+                                href={mailtoHref(fallbackEmail)}
+                                className="mt-3 inline-block rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-cream"
+                              >
+                                Küldés e-mailben
+                              </a>
+                            </>
+                          ) : null}
+                        </div>
                       </div>
                     ) : null}
 
