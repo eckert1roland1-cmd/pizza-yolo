@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "/partner" },
+  // Csak közvetlen linkkel érhető el: nincs rá hivatkozás a site-on, és a
+  // keresők sem indexelik.
+  robots: { index: false, follow: false },
   openGraph: {
     title: `${TITLE} | Pizza Yolo`,
     description: DESCRIPTION,
