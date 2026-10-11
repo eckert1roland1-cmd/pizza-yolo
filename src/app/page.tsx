@@ -1,28 +1,21 @@
 import type { Metadata } from "next";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { Hero } from "@/components/home/Hero";
-import { Usp } from "@/components/home/Usp";
-import { Style } from "@/components/home/Style";
-import { Product } from "@/components/home/Product";
 import { Gallery } from "@/components/home/Gallery";
-import { Experience } from "@/components/home/Experience";
 import { Reviews } from "@/components/home/Reviews";
-import { Location } from "@/components/home/Location";
-import { Newsletter } from "@/components/home/Newsletter";
 import { HomeFooter } from "@/components/home/HomeFooter";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { menuSchema } from "@/components/seo/schema";
 
+// Coming-soon landing: no open location right now. The menu, location and
+// newsletter sections are parked until the next opening.
 export const metadata: Metadata = {
-  title: "Pizza Yolo — Detroit Style Pizza Near Siófok | Club Aliga, Balaton",
+  title: "Pizza Yolo — Detroit Style Pizza | Coming Soon",
   description:
-    "Detroit Style Pizza by the beach at Club Aliga, Balatonvilágos — about 15 minutes from Siófok on Lake Balaton's south shore.",
+    "Detroit Style Pizza by the slice. We're working hard on what's next — new locations coming soon.",
   alternates: { canonical: "/" },
   openGraph: {
     url: "/",
-    title: "Pizza Yolo — Detroit Style Pizza by the Beach",
-    description:
-      "Fresh Detroit Style Pizza served daily at Club Aliga, Balatonvilágos — a short drive from Siófok, Lake Balaton.",
+    title: "Pizza Yolo — Coming Soon",
+    description: "We're working hard right now. New locations coming soon.",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Pizza Yolo" }],
   },
 };
@@ -30,18 +23,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <JsonLd data={menuSchema()} />
       <HomeHeader />
       <main className="flex-1">
         <Hero />
-        <Usp />
-        <Style />
         <Reviews />
-        <Product />
-        <Experience />
         <Gallery />
-        <Location />
-        <Newsletter />
       </main>
       <HomeFooter />
     </>

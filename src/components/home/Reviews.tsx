@@ -23,7 +23,7 @@ function Stars() {
 
 export function Reviews() {
   return (
-    <section className="bg-brand/5 px-6 py-24">
+    <section id="reviews" className="scroll-mt-20 bg-brand/5 px-6 py-24">
       <Reveal>
         <p className="text-sm font-semibold uppercase tracking-wide text-brand">Real Reviews</p>
       </Reveal>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Jersey_10, Poppins } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { localBusinessSchema, organizationSchema, websiteSchema } from "@/components/seo/schema";
+import { organizationSchema, websiteSchema } from "@/components/seo/schema";
 import { SITE_NAME, SITE_URL } from "@/lib/site-config";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import {
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: `%s | ${SITE_NAME}`,
-    default: `${SITE_NAME} — Detroit Style Pizza by the Beach | Balatonvilágos`,
+    default: `${SITE_NAME} — Detroit Style Pizza | Coming Soon`,
   },
   description:
-    "Detroit Style Pizza by the beach. Fresh square slices served daily at Club Aliga, Balatonvilágos, Lake Balaton.",
+    "Detroit Style Pizza by the slice. We're working hard on what's next — new locations coming soon.",
   openGraph: {
     siteName: SITE_NAME,
     locale: "en_US",
@@ -63,7 +63,6 @@ export default function RootLayout({
         <GoogleTagManager />
         <GoogleTagManagerNoScript />
         <JsonLd data={organizationSchema()} />
-        <JsonLd data={localBusinessSchema()} />
         <JsonLd data={websiteSchema()} />
         <MotionProvider>{children}</MotionProvider>
         <ConsentBanner />

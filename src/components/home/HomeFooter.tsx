@@ -1,12 +1,10 @@
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { LegalLinks } from "@/components/legal/LegalLinks";
-import { OpeningHours } from "@/components/ui/OpeningHours";
-import { NAP, SOCIAL_LINKS } from "@/lib/site-config";
+import { SOCIAL_LINKS } from "@/lib/site-config";
 
 const NAV_LINKS = [
-  { href: "#menu", label: "Menu" },
+  { href: "#reviews", label: "Reviews" },
   { href: "#gallery", label: "Gallery" },
-  { href: "#location", label: "Location" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -21,12 +19,7 @@ export function HomeFooter() {
           </a>
         ))}
       </nav>
-      <div className="space-y-1">
-        <p>
-          {NAP.streetAddress}, {NAP.addressLocality}
-        </p>
-        <OpeningHours className="space-y-1" />
-      </div>
+      <p>New locations coming soon.</p>
       <div className="flex gap-6">
         <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:opacity-70">
           Instagram

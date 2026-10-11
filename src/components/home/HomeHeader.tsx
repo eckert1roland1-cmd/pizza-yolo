@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { BrandLogo } from "@/components/ui/BrandLogo";
+import { SOCIAL_LINKS } from "@/lib/site-config";
 
 const NAV_LINKS = [
-  { href: "#menu", label: "Menu" },
+  { href: "#reviews", label: "Reviews" },
   { href: "#gallery", label: "Gallery" },
-  { href: "#location", label: "Location" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -41,10 +41,12 @@ export function HomeHeader() {
       <motion.a
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.98 }}
-        href="#location"
+        href={SOCIAL_LINKS.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
         className="rounded-full bg-ink px-5 py-2 text-sm font-semibold text-cream"
       >
-        Visit Us
+        Follow Us
       </motion.a>
     </motion.header>
   );
