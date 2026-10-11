@@ -34,6 +34,3 @@ export const SOCIAL_LINKS = {
   tiktok: "https://tiktok.com/@realpizzayolo",
 };
 
-// Single shared code, shown in-app and emailed on signup. Redeemed in person
-// at the truck — there's no online ordering system to enforce per-user codes.
-export const COUPON_CODE = "YOLO10";

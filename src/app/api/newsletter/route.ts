@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { CONTACT_EMAIL, COUPON_CODE, SITE_NAME } from "@/lib/site-config";
-import { couponEmailHtml } from "@/lib/newsletter-email";
+import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site-config";
+import { waitlistEmailHtml } from "@/lib/newsletter-email";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -58,14 +58,14 @@ export async function POST(request: Request) {
     body: JSON.stringify({
       sender: { name: SITE_NAME, email: CONTACT_EMAIL },
       to: [{ email }],
-      subject: "Your 10% off code is here",
-      htmlContent: couponEmailHtml(COUPON_CODE),
+      subject: "You're on the list",
+      htmlContent: waitlistEmailHtml(),
     }),
   });
 
   if (!emailRes.ok) {
-    // Contact is already saved and the popup shows the code either way,
-    // so a failed confirmation email shouldn't fail the whole signup.
+    // The contact is already saved, so a failed confirmation email
+    // shouldn't fail the whole signup.
     const detail = await emailRes.text();
     console.error("Brevo transactional email failed:", emailRes.status, detail);
   }
